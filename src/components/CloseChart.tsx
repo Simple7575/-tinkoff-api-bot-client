@@ -14,9 +14,10 @@ interface Props {
 export default function CloseChart({ data }: Props) {
     return (
         <>
-            <h3>Close</h3>
+            <h3>Open & Close</h3>
             <ComposedChart width={600} height={300} data={data}>
                 <Line type="monotone" dataKey="close" stroke="#2fa8fe" />
+                <Line type="monotone" dataKey="open" stroke="#00ff37" />
                 <XAxis />
                 <YAxis />
                 <Tooltip />

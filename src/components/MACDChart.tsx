@@ -17,9 +17,9 @@ export default function MACDChart({ data }: Props) {
         <>
             <h3>MACD</h3>
             <ComposedChart width={600} height={300} data={data}>
+                <Bar dataKey="histogram" fill="#cd87b6" />
                 <Line type="monotone" dataKey="MACD" stroke="#2fa8fe" />
                 <Line type="monotone" dataKey="signal" stroke="#feb62f" />
-                <Bar dataKey="histogram" fill="#cd87b6" />
                 <XAxis />
                 <YAxis />
                 <Tooltip />

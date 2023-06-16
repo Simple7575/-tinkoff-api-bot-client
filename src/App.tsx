@@ -1,4 +1,4 @@
-import { useState, type MouseEvent, type FormEvent, type ChangeEvent } from "react";
+import { useState, type FormEvent, type ChangeEvent } from "react";
 import MACDChart from "./components/MACDChart";
 import "./App.css";
 import axios from "axios";
@@ -43,9 +43,8 @@ function App() {
             setLoading(true);
             e.preventDefault();
             const { data } = await axios.get(url.href);
-            console.log(data);
-            setMacd(data.macd.slice(data.macd.length - 15));
-            setCandles(data.candles.slice(data.candles.length - 15));
+            setMacd(data.macd.slice(data.macd.length - 40));
+            setCandles(data.candles.slice(data.candles.length - 40));
             setLoading(false);
             setError(null);
         } catch (error) {
